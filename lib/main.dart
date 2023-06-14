@@ -7,6 +7,7 @@ import 'package:myapp/services/firestore.dart';
 import 'package:myapp/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:myapp/services/models.dart';
+import 'firebase_options.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,10 +52,14 @@ class _AppState extends State<App> {
           return StreamProvider(
             create: (_) => FirestoreService().getReport(),
             initialData: Report(),
-            child: MaterialApp(
-              debugShowCheckedModeBanner: true,
-              routes: appRoutes,
-              theme: appTheme,
+            child: FutureProvider(
+              create: (_) => FirestoreService().getTopics(),
+              initialData: [Topic()],
+              child: MaterialApp(
+                debugShowCheckedModeBanner: true,
+                routes: appRoutes,
+                theme: appTheme,
+              ),
             ),
           );
         }

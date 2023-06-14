@@ -2,14 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Myapp</string>
+	<key>GIDServerClientID</key>
+	<string>AIzaSyCfK9zC1HkV7fssPoy7PE-Xq-lCLwO_ZYg</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleURLTypes</key>
+		<array>
+  			<dict>
+    			<key>CFBundleURLSchemes</key>
+    	<array>
+      <string>com.googleusercontent.apps.373681007010-mq0rgbd0n7qqhs1busbpqra89dvmjota</string>
+    </array>
+  </dict>
+</array>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
