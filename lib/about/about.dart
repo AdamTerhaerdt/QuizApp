@@ -43,8 +43,11 @@ class AboutScreen extends StatelessWidget {
                         );
                       },
                       body: ListTile(
-                        title: const Text(
-                          "Who am Iadisfjsiaufjaisdjisadnfliasdnskldamfklsamfklasmdflkasmdflmasfdfisdanfiafsd?",
+                        title: Padding(
+                          padding: const EdgeInsets.only(bottom: 24.0),
+                          child: const Text(
+                            "My name is Adam and I am using this app to learn Flutter. I am a 4th year Software Engineering student who is passionate about mobile development. I have always been intrigued by the power of mobile applications and their ability to make a significant impact on people's lives. In addition to using this app to learn Flutter, I am also leveraging this project as a means to gain practical knowledge and skills for building a mobile app specifically tailored for a local coffee company. As a passionate software engineering student, I believe that applying my learning to real-world scenarios is essential for honing my abilities and making a tangible impact.",
+                          ),
                         ),
                       ),
                       isExpanded: state.isExpanded(0),
@@ -62,9 +65,12 @@ class AboutScreen extends StatelessWidget {
                       },
                       body: ListTile(
                         title: Center(
-                            child: Text(
-                          "Dart\nPython\nC\nJava\nJavaScript\nHTML\nCSS\nReact-Native",
-                          textAlign: TextAlign.center,
+                            child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: Text(
+                            "Dart\nPython\nC\nJava\nJavaScript\nHTML\nCSS\nReact-Native",
+                            textAlign: TextAlign.center,
+                          ),
                         )),
                       ),
                       isExpanded: state.isExpanded(1),
