@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myapp/services/auth.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -31,11 +32,17 @@ class LoginScreen extends StatelessWidget {
               loginMethod: AuthService().googleLogin,
               color: Colors.blue,
             ),
-            LoginButton(
-              text: "Sign in with Apple",
-              icon: FontAwesomeIcons.apple,
-              loginMethod: AuthService().googleLogin,
-              color: Colors.black,
+            FutureBuilder<bool>(
+              future: AuthService().appleSignInAvailable,
+              builder: (context, snapshot) {
+                if (snapshot.data == true) {
+                  return SignInWithAppleButton(
+                    onPressed: AuthService().appleSignIn,
+                  );
+                } else {
+                  return const SizedBox();
+                }
+              },
             ),
           ],
         ),
